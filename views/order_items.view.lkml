@@ -35,7 +35,7 @@ view: order_items {
     sql: ${TABLE}.sale_price ;;
   }
   measure: count {
-    type: count
-    drill_fields: [id,returned_time,phones, orders.id, inventory_items.id]
+    type: sum
+    drill_fields: [id ,returned_date,phones, orders.id, ]
   }
 }

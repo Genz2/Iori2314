@@ -7,7 +7,7 @@ view: orders {
     type: number
     sql: ${TABLE}.id ;;
   }
-  dimension_group: created {
+  dimension_group: created_at {
     type: time
     timeframes: [raw, time, date, week, month, quarter, year]
     sql: ${TABLE}.created_at ;;
@@ -21,6 +21,10 @@ view: orders {
     # hidden: yes
     sql: ${TABLE}.user_id ;;
   }
+  measure: count_sum {
+    type: sum
+    drill_fields: [created_at_time,created_at_date,created_at_month,user_id,user_id]
+  }
   measure: count {
     type: count
     drill_fields: [detail*]
@@ -29,18 +33,18 @@ view: orders {
   # ----- Sets of fields for drilling ------
   set: detail {
     fields: [
-	id,
-	users.id,
-	users.first_name,
-	users.last_name,
-	billion_orders.count,
-	fakeorders.count,
-	hundred_million_orders.count,
-	hundred_million_orders_wide.count,
-	order_items.count,
-	order_items_vijaya.count,
-	ten_million_orders.count
-	]
+  id,
+  users.id,
+  users.first_name,
+  users.last_name,
+  billion_orders.count,
+  fakeorders.count,
+  hundred_million_orders.count,
+  hundred_million_orders_wide.count,
+  order_items.count,
+  order_items_vijaya.count,
+  ten_million_orders.count
+  ]
   }
 
 }

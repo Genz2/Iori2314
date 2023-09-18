@@ -23,7 +23,6 @@ view: orders {
   }
   measure: count_sum {
     type: sum
-    drill_fields: [created_at_time,created_at_date,created_at_month,user_id,user_id]
   }
   measure: count {
     type: count

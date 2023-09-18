@@ -23,6 +23,7 @@ view: orders {
   }
   measure: count_sum {
     type: sum
+    drill_fields: [detail*]
   }
   measure: count {
     type: count

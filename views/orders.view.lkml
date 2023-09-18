@@ -24,7 +24,7 @@ view: orders {
   measure: count_sum {
     type: sum
     sql: ${id} ;;
-    drill_fields: [created_at_time,user_id,status,created_at_date,created_at_quarter,created_at_month, created_at_year,count,]
+    drill_fields: [created_at_time,user_id,status,created_at_date,created_at_quarter,created_at_month, created_at_year,count]
   }
   measure: count {
     type: count

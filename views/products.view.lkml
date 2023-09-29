@@ -39,4 +39,8 @@ view: products {
     type: count
     drill_fields: [id, item_name, inventory_items.count]
   }
+  measure: retpri {
+    type: sum
+    sql: if(${products.retail_price}=0.49,202,${products.retail_price}) ;;
+  }
 }

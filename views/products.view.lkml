@@ -41,6 +41,6 @@ view: products {
   }
   measure: tot_rank {
     type: sum
-    sql: if ${rank} = 1 then 20 else ${rank} ;;
+    sql: if ${retail_price} = 1 then 20 else ${retail_price} ;;
   }
 }
